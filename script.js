@@ -6,19 +6,14 @@ var generateBtn = document.querySelector("#generate");
 var letterOptionsLowerCase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 var letterOptionsUpperCase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 var numberOptions = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
-var characterOptions = ["!", "@", "#", "$", "%", "^", "&", "*", "<", ">", ".", "?", "/", "~", "=", "+", "-", "_"];
+var characterOptions = [ "!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", ":", ";", "<", "=", ">", "?", "@", "[", "^", "_", "{", "|", "}", "~"];
+var passwordCharacters = []
 
 // creating a function that generates the password
 function generatePassword(){
 
   // asking user if they would like to generate a password 
-  var confirmPassword = window.prompt("Would you like to generate a random password?");
-  confirmPassword = confirmPassword.toUpperCase();
-  if (confirmPassword == "YES"){
-    window.alert("Ok, let's choose a few parameters");
-  }else{
-    return;
-  }
+  window.confirm("Would you like to generate a random password?");
 
   // Choosing password length and storing it in a variable
   var passwordLength = window.prompt("Choose a password length between 8 and 128 characters: ");
@@ -37,32 +32,43 @@ function generatePassword(){
 
   // taking the stored value for password length and using it to help choose the proper number of characters
 
-
-
-  window.alert("Would you like your password to contain lower case letters?");
+  window.confirm("Would you like your password to contain lower case letters?");
   var index = Math.floor(Math.random() * letterOptionsLowerCase.length);
   var randomLowerCaseLetter = letterOptionsLowerCase[index];
-  window.alert("your random lower case letter is " +randomLowerCaseLetter );
+  passwordCharacters.push(randomLowerCaseLetter);
 
-  window.alert("Would you like your password to contain upper case letters?");
+
+  window.confirm("Would you like your password to contain upper case letters?");
   var index = Math.floor(Math.random() * letterOptionsUpperCase.length);
   var randomUpperCaseLetter = letterOptionsUpperCase[index];
-  window.alert("Your random upper case letter is " + randomUpperCaseLetter);
+  passwordCharacters.push(randomUpperCaseLetter);
 
-  window.alert("Would you like your password to contain Numbers?");
+  window.confirm("Would you like your password to contain Numbers?");
   var index = Math.floor(Math.random() * numberOptions.length);
   var randomNumber = numberOptions[index];
-  window.alert("Your random number is " + randomNumber);
+  passwordCharacters.push(randomNumber);
 
-  window.alert("Would you like your password to contain characters?");
+
+  window.confirm("Would you like your password to contain characters?");
   var index = Math.floor(Math.random() * characterOptions.length);
   var randomCharacter = characterOptions[index];
-  window.alert("Your random character is " + randomCharacter);
+  passwordCharacters.push(randomCharacter);
 
-  var randomPassword = (randomLowerCaseLetter+randomUpperCaseLetter+randomNumber+randomCharacter);
+  // from the actions above, I have create an array of random characters called passwordCharacters
 
-  window.alert("Your new password is " + randomPassword);
+  // console.log(passwordCharacters);
+  // creating empty string to hold password
+  var randomPassword = ""
+  // Go through the array, passworCharacters, and pick the number of characters set by password length
+  for (i=0; i<passwordLength; i++){
+    var index = Math.floor(Math.random() * passwordCharacters.length);
+    password = passwordCharacters[index];
+    randomPassword = randomPassword.concat(password)
+  }
+
+  return randomPassword;
 }
+
 
 
 // Write password to the #password input
