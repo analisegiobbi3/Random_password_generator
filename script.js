@@ -36,11 +36,10 @@ function generatePassword(){
   if (window.confirm("Would you like your password to contain lower case letters?") == true){
     var index = Math.floor(Math.random() * letterOptionsLowerCase.length);
     var randomLowerCaseLetter = letterOptionsLowerCase[index];
-    pass
-    wordCharacters.push(randomLowerCaseLetter);
+    passwordCharacters.push(randomLowerCaseLetter);
   }
 
-  if (window.confirm("Would you like your password to contain upper case letters?")){
+  if (window.confirm("Would you like your password to contain upper case letters?") == true){
     var index = Math.floor(Math.random() * letterOptionsUpperCase.length);
     var randomUpperCaseLetter = letterOptionsUpperCase[index];
     passwordCharacters.push(randomUpperCaseLetter);
@@ -60,7 +59,6 @@ function generatePassword(){
 
   // from the actions above, I have create an array of random characters called passwordCharacters
 
-  // console.log(passwordCharacters);
   // creating empty string to hold password
   var randomPassword = ""
   // Go through the array, passworCharacters, and pick the number of characters set by password length
@@ -72,8 +70,6 @@ function generatePassword(){
 
   return randomPassword;
 }
-
-
 
 // Write password to the #password input
 function writePassword() {
