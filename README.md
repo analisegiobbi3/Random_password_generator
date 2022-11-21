@@ -45,4 +45,4 @@ The final result will be a randomly generated password:
 ![The randomly generated password will have all of the specified criteria](./Assets/generated_password_example.png)
 
 ## Link
-
+[Random Password Generator](https://analisegiobbi3.github.io/mod_3_challenge/)
