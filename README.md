@@ -39,10 +39,10 @@ The following image shows the web application's appearance and functionality:
 
 The following window prompt will appear:
 
-![The window prompt will appear and allow the user to start the generate password flow](./Assets/Screen%20Shot%202022-11-20%20at%2011.08.03%20AM.png)
+![The window prompt will appear and allow the user to start the generate password flow](./Assets/Popup_example.png)
 
 The final result will be a randomly generated password:
-![The randomly generated password will have all of the specified criteria](./Assets/Screen%20Shot%202022-11-20%20at%2011.05.13%20AM.png)
+![The randomly generated password will have all of the specified criteria](./Assets/generated_password_example.png)
 
 ## Link
 
